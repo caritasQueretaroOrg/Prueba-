@@ -84,11 +84,13 @@
             </button>
           </article>
 
-          <article class="system-flicker panel relative flex flex-col p-6">
-            <span class="absolute right-4 top-4 border border-neon bg-neon/10 px-3 py-1 font-sans text-xs font-bold uppercase tracking-wide text-neon shadow-neon">
-              M&aacute;s vendido
-            </span>
-            <p class="font-sans text-xs font-bold uppercase tracking-[.25em] text-cyanGlow">Experiencia permanente</p>
+          <article class="system-flicker panel flex flex-col p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="font-sans text-xs font-bold uppercase tracking-[.25em] text-cyanGlow">Experiencia permanente</p>
+              <span class="shrink-0 border border-neon bg-neon/10 px-3 py-1 font-sans text-xs font-bold uppercase tracking-wide text-neon shadow-neon">
+                M&aacute;s vendido
+              </span>
+            </div>
             <h2 class="mt-4 text-3xl font-bold text-slate-100">Plan de vida (conservando tu cerebro)</h2>
             <p class="mt-5 text-5xl font-extrabold text-neon">$500</p>
             <p class="mt-1 font-sans text-sm text-slate-500">Pago mensual</p>
@@ -103,43 +105,43 @@
       </section>
     </main>
 
-    <div id="planModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md">
-      <article class="panel access-dialog relative max-h-[94vh] w-full max-w-2xl overflow-y-auto p-5 sm:p-7">
+    <div id="planModal" class="fixed inset-0 z-50 hidden items-start justify-center overflow-y-auto bg-black/80 px-3 py-3 backdrop-blur-md sm:items-center sm:px-4 sm:py-6">
+      <article class="panel access-dialog relative my-auto max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl overflow-y-auto p-4 pt-16 sm:max-h-[calc(100dvh-3rem)] sm:p-7">
         <button id="closePlanModal" class="glitch-button absolute right-4 top-4 border border-neon bg-black px-3 py-2 text-xs font-bold uppercase tracking-wide text-neon hover:bg-neon hover:text-black" type="button">
           Cerrar
         </button>
 
         <div id="planFormView">
           <p class="font-sans text-xs font-bold uppercase tracking-[.28em] text-cyanGlow">Registro de acceso</p>
-          <h2 id="selectedPlanTitle" class="mt-3 pr-20 text-3xl font-bold text-neon"></h2>
+          <h2 id="selectedPlanTitle" class="mt-3 text-2xl font-bold leading-tight text-neon sm:pr-20 sm:text-3xl"></h2>
           <p class="mt-3 font-sans text-sm leading-6 text-slate-400">
             Introduce los datos de la persona y del chip vinculado al sistema.
           </p>
 
-          <form id="planForm" class="mt-6 grid gap-5 sm:grid-cols-2">
+          <form id="planForm" class="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-5">
             <label class="font-sans text-sm text-slate-300 sm:col-span-2">
               Nombre completo
-              <input name="fullName" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="text" autocomplete="name" required />
+              <input name="fullName" class="mt-2 w-full border border-neon/40 bg-black/50 px-3 py-2.5 text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-neon focus:shadow-neon" type="text" autocomplete="name" required />
             </label>
             <label class="font-sans text-sm text-slate-300">
               Correo electr&oacute;nico
-              <input name="email" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="email" autocomplete="email" required />
+              <input name="email" class="mt-2 w-full border border-neon/40 bg-black/50 px-3 py-2.5 text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-neon focus:shadow-neon" type="email" autocomplete="email" required />
             </label>
             <label class="font-sans text-sm text-slate-300">
               Tel&eacute;fono
-              <input name="phone" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="tel" autocomplete="tel" required />
+              <input name="phone" class="mt-2 w-full border border-neon/40 bg-black/50 px-3 py-2.5 text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-neon focus:shadow-neon" type="tel" autocomplete="tel" required />
             </label>
             <label class="font-sans text-sm text-slate-300">
               Identificador del chip
-              <input name="chipId" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 uppercase text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="UTP-0000-0000" required />
+              <input name="chipId" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-3 py-2.5 uppercase text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="UTP-0000-0000" required />
             </label>
             <label class="font-sans text-sm text-slate-300">
               Modelo del chip
-              <input name="chipModel" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="Enlace Neural V4" required />
+              <input name="chipModel" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-3 py-2.5 text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="Enlace Neural V4" required />
             </label>
             <label class="font-sans text-sm text-slate-300 sm:col-span-2">
               C&oacute;digo de vinculaci&oacute;n
-              <input name="linkCode" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 uppercase text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="XXXX-XXXX" required />
+              <input name="linkCode" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-3 py-2.5 uppercase text-slate-100 sm:px-4 sm:py-3 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="XXXX-XXXX" required />
             </label>
             <button class="glitch-button border border-neon bg-neon px-6 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon sm:col-span-2" type="submit">
               Confirmar acceso
@@ -147,12 +149,12 @@
           </form>
         </div>
 
-        <div id="planResultView" class="hidden py-8 text-center">
-          <div class="access-scanner mx-auto mb-7 grid h-28 w-28 place-items-center border border-cyanGlow/70">
-            <span class="h-14 w-14 border border-neon shadow-neon"></span>
+        <div id="planResultView" class="hidden py-4 text-center sm:py-8">
+          <div class="access-scanner mx-auto mb-4 grid h-20 w-20 place-items-center border border-cyanGlow/70 sm:mb-7 sm:h-28 sm:w-28">
+            <span class="h-10 w-10 border border-neon shadow-neon sm:h-14 sm:w-14"></span>
           </div>
           <p class="font-sans text-xs font-bold uppercase tracking-[.28em] text-cyanGlow">Solicitud registrada</p>
-          <h2 id="planResultTitle" class="mt-3 text-3xl font-bold text-neon"></h2>
+          <h2 id="planResultTitle" class="mt-3 text-2xl font-bold leading-tight text-neon sm:text-3xl"></h2>
           <p id="planResultMessage" class="mx-auto mt-4 max-w-lg font-sans text-base leading-7 text-slate-300"></p>
           <a id="planResultAction" href="/inicio.html" class="glitch-button mt-7 inline-block border border-neon bg-neon px-7 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon">
             Continuar
