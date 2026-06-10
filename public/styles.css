@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at 54% 40%, rgba(0, 255, 95, 0.13), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(49, 247, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 12% 78%, rgba(255, 45, 183, 0.1), transparent 25%),
+    linear-gradient(180deg, #001b14 0%, #03120f 42%, #02050a 100%);
+}
+
+.dream-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 95, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 247, 255, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 72%, transparent);
+}
+
+.scanline {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+.panel {
+  border: 1px solid rgba(0, 255, 95, 0.45);
+  background: linear-gradient(135deg, rgba(2, 5, 10, 0.9), rgba(4, 22, 18, 0.78));
+  box-shadow: 0 0 24px rgba(0, 255, 95, 0.12), inset 0 0 24px rgba(49, 247, 255, 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.dream-photo {
+  overflow: hidden;
+  border-radius: 18px;
+  filter: drop-shadow(0 0 28px rgba(0, 255, 95, 0.18)) drop-shadow(0 0 44px rgba(49, 247, 255, 0.16));
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 13%, black 84%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 13%, black 84%, transparent 100%);
+  -webkit-mask-composite: source-in;
+}
+
+.dream-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 48% 45%, transparent 45%, rgba(2, 5, 10, 0.72) 100%),
+    linear-gradient(135deg, rgba(0, 255, 95, 0.16), transparent 36%, rgba(49, 247, 255, 0.12));
+  pointer-events: none;
+}
+
+.dream-photo img {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.access-dialog {
+  animation: access-dialog-glitch 5s steps(1, end) infinite;
+}
+
+.access-scanner {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(49, 247, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 95, 0.08) 1px, transparent 1px);
+  background-size: 14px 14px;
+  box-shadow: 0 0 32px rgba(49, 247, 255, 0.25);
+}
+
+.access-scanner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 3px;
+  background: #00ff5f;
+  box-shadow: 0 0 16px #00ff5f;
+  animation: scanner-line 2s linear infinite;
+}
+
+.access-progress {
+  animation: access-progress 5s linear forwards;
+}
+
+.glitch-title {
+  animation: title-glitch 8s steps(1, end) infinite;
+  will-change: transform, filter, text-shadow;
+}
+
+.glitch-button {
+  animation: button-glitch 7s steps(1, end) infinite;
+  will-change: transform, filter, box-shadow;
+}
+
+.breathe-image {
+  animation: image-breathe 5.5s ease-in-out infinite;
+  will-change: transform, filter, opacity;
+}
+
+.dream-breathe {
+  animation: dream-border-breathe 6s ease-in-out infinite;
+  will-change: filter, opacity;
+}
+
+.system-flicker {
+  animation: system-flicker 9s steps(1, end) infinite;
+}
+
+.system-flicker:nth-child(3n + 2) {
+  animation-delay: -2.8s;
+}
+
+.system-flicker:nth-child(3n) {
+  animation-delay: -5.1s;
+}
+
+.main-system .glitch-title,
+.main-system .glitch-button,
+.main-system .system-flicker {
+  animation-duration: 5s;
+}
+
+.main-system .system-flicker:nth-child(2) {
+  animation-delay: -1.25s;
+}
+
+.main-system .system-flicker:nth-child(3) {
+  animation-delay: -2.5s;
+}
+
+.main-system .system-flicker:nth-child(4) {
+  animation-delay: -3.75s;
+}
+
+@keyframes title-glitch {
+  0%,
+  88%,
+  100% {
+    transform: translate(0);
+    filter: none;
+    text-shadow: none;
+  }
+
+  89% {
+    transform: translate(-3px, 1px) skewX(-2deg);
+    filter: saturate(1.8);
+    text-shadow: 4px 0 #ff2fb3, -4px 0 #31f7ff;
+  }
+
+  90% {
+    transform: translate(4px, -1px) skewX(3deg);
+    text-shadow: -5px 0 #00ff5f, 3px 0 #ff2fb3;
+  }
+
+  91% {
+    transform: translate(-1px, 0);
+    filter: brightness(1.8);
+    text-shadow: 2px 0 #31f7ff;
+  }
+
+  92% {
+    transform: translate(0);
+    filter: none;
+    text-shadow: none;
+  }
+}
+
+@keyframes button-glitch {
+  0%,
+  82%,
+  86%,
+  100% {
+    transform: translate(0);
+    filter: none;
+  }
+
+  83% {
+    transform: translateX(-2px);
+    filter: brightness(1.7) contrast(1.4);
+    box-shadow: 4px 0 #ff2fb3, -4px 0 #31f7ff;
+  }
+
+  84% {
+    transform: translateX(3px);
+    filter: invert(0.12);
+  }
+
+  85% {
+    transform: translateX(-1px);
+    opacity: 0.72;
+  }
+}
+
+@keyframes image-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.88;
+    filter: brightness(0.92) saturate(0.95) drop-shadow(0 0 8px rgba(0, 255, 95, 0.18));
+  }
+
+  50% {
+    transform: scale(1.025);
+    opacity: 1;
+    filter: brightness(1.08) saturate(1.18) drop-shadow(0 0 26px rgba(0, 255, 95, 0.55)) drop-shadow(0 0 38px rgba(49, 247, 255, 0.28));
+  }
+}
+
+@keyframes dream-border-breathe {
+  0%,
+  100% {
+    opacity: 0.84;
+    filter: drop-shadow(0 0 14px rgba(0, 255, 95, 0.14)) drop-shadow(0 0 24px rgba(49, 247, 255, 0.1));
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 36px rgba(0, 255, 95, 0.38)) drop-shadow(0 0 58px rgba(49, 247, 255, 0.28));
+  }
+}
+
+@keyframes system-flicker {
+  0%,
+  72%,
+  75%,
+  93%,
+  96%,
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+
+  73% {
+    opacity: 0.42;
+    filter: brightness(1.8);
+  }
+
+  74% {
+    opacity: 0.92;
+    filter: hue-rotate(35deg);
+  }
+
+  94% {
+    opacity: 0.18;
+    transform: translateX(1px);
+  }
+
+  95% {
+    opacity: 1;
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes scanner-line {
+  from {
+    transform: translateY(-4px);
+  }
+
+  to {
+    transform: translateY(112px);
+  }
+}
+
+@keyframes access-progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes access-dialog-glitch {
+  0%,
+  91%,
+  100% {
+    transform: translate(0);
+    filter: none;
+  }
+
+  92% {
+    transform: translateX(-3px);
+    filter: hue-rotate(45deg) brightness(1.4);
+  }
+
+  93% {
+    transform: translateX(4px);
+  }
+
+  94% {
+    transform: translate(0);
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-title,
+  .glitch-button,
+  .breathe-image,
+  .dream-breathe,
+  .system-flicker,
+  .access-dialog,
+  .access-scanner::after,
+  .access-progress {
+    animation: none;
+  }
+}

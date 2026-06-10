@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planes - Sistema Utopias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: '#00ff5f',
+              cyanGlow: '#31f7ff',
+              darkInk: '#02050a'
+            },
+            fontFamily: {
+              display: ['Orbitron', 'Rajdhani', 'Arial', 'sans-serif']
+            },
+            boxShadow: {
+              neon: '0 0 22px rgba(0,255,95,.55)',
+              cyan: '0 0 24px rgba(49,247,255,.28)'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-darkInk text-slate-100 font-display">
+    <main class="main-system relative min-h-screen">
+      <div class="scanline pointer-events-none fixed inset-0 z-40 opacity-30"></div>
+      <div class="absolute inset-0 dream-grid"></div>
+      <div class="absolute left-1/2 top-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-neon/10 blur-3xl"></div>
+
+      <header class="relative z-10 mx-auto flex max-w-7xl justify-between px-4 py-5 sm:px-6 lg:px-8">
+        <a href="/inicio.html" class="glitch-button border border-cyanGlow/70 bg-cyanGlow/10 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-cyanGlow shadow-cyan hover:bg-cyanGlow hover:text-black">
+          Inicio
+        </a>
+        <a href="/productos.html" class="glitch-button border border-neon/70 bg-neon/10 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-neon hover:bg-neon hover:text-black">
+          Productos
+        </a>
+      </header>
+
+      <section class="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-5 sm:px-6 lg:px-8">
+        <header class="mx-auto max-w-4xl text-center">
+          <p class="mb-3 font-sans text-sm font-semibold uppercase tracking-[.28em] text-cyanGlow">Selecciona tu experiencia</p>
+          <h1 class="glitch-title text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-[1.04] text-slate-100">
+            Planes de
+            <span class="block text-neon">suscripci&oacute;n</span>
+          </h1>
+          <p class="mx-auto mt-5 max-w-2xl font-sans text-base leading-7 text-slate-400">
+            Decide cu&aacute;nto tiempo quieres permanecer dentro de tu vida ideal y qu&eacute; parte de ti conservar&aacute; la conexi&oacute;n.
+          </p>
+        </header>
+
+        <section class="mt-10 grid items-stretch gap-5 lg:grid-cols-3">
+          <article class="system-flicker panel flex flex-col p-6">
+            <p class="font-sans text-xs font-bold uppercase tracking-[.25em] text-cyanGlow">Experiencia temporal</p>
+            <h2 class="mt-4 text-3xl font-bold text-slate-100">Plan por 1 hora</h2>
+            <p class="mt-5 text-5xl font-extrabold text-neon">$50</p>
+            <p class="mt-1 font-sans text-sm text-slate-500">Pago &uacute;nico</p>
+            <p class="mt-6 flex-1 font-sans text-sm leading-6 text-slate-300">
+              Acceso completo durante una hora para explorar la vida que siempre imaginaste.
+            </p>
+            <button class="plan-button glitch-button mt-7 border border-neon bg-neon px-6 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon" type="button" data-plan="hour">
+              Elegir plan
+            </button>
+          </article>
+
+          <article class="system-flicker panel relative flex flex-col border-cyanGlow p-6 shadow-cyan">
+            <p class="font-sans text-xs font-bold uppercase tracking-[.25em] text-cyanGlow">Experiencia permanente</p>
+            <h2 class="mt-4 max-w-xs text-3xl font-bold text-slate-100">Plan de por vida (conservando tu cuerpo)</h2>
+            <p class="mt-5 text-5xl font-extrabold text-neon">$35,000</p>
+            <p class="mt-1 font-sans text-sm text-slate-500">Pago mensual</p>
+            <p class="mt-6 flex-1 font-sans text-sm leading-6 text-slate-300">
+              Conexi&oacute;n permanente con preservaci&oacute;n corporal para mantener tu cuerpo mientras habitas la experiencia Utopias.
+            </p>
+            <button class="plan-button glitch-button mt-7 border border-neon bg-neon px-6 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon" type="button" data-plan="body">
+              Elegir plan
+            </button>
+          </article>
+
+          <article class="system-flicker panel relative flex flex-col p-6">
+            <span class="absolute right-4 top-4 border border-neon bg-neon/10 px-3 py-1 font-sans text-xs font-bold uppercase tracking-wide text-neon shadow-neon">
+              M&aacute;s vendido
+            </span>
+            <p class="font-sans text-xs font-bold uppercase tracking-[.25em] text-cyanGlow">Experiencia permanente</p>
+            <h2 class="mt-4 text-3xl font-bold text-slate-100">Plan de vida (conservando tu cerebro)</h2>
+            <p class="mt-5 text-5xl font-extrabold text-neon">$500</p>
+            <p class="mt-1 font-sans text-sm text-slate-500">Pago mensual</p>
+            <p class="mt-6 flex-1 font-sans text-sm leading-6 text-slate-300">
+              Conversi&oacute;n neural: mantenemos tu cerebro para que puedas vivir la experiencia Utopias para siempre.
+            </p>
+            <button class="plan-button glitch-button mt-7 border border-neon bg-neon px-6 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon" type="button" data-plan="brain">
+              Elegir plan
+            </button>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <div id="planModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md">
+      <article class="panel access-dialog relative max-h-[94vh] w-full max-w-2xl overflow-y-auto p-5 sm:p-7">
+        <button id="closePlanModal" class="glitch-button absolute right-4 top-4 border border-neon bg-black px-3 py-2 text-xs font-bold uppercase tracking-wide text-neon hover:bg-neon hover:text-black" type="button">
+          Cerrar
+        </button>
+
+        <div id="planFormView">
+          <p class="font-sans text-xs font-bold uppercase tracking-[.28em] text-cyanGlow">Registro de acceso</p>
+          <h2 id="selectedPlanTitle" class="mt-3 pr-20 text-3xl font-bold text-neon"></h2>
+          <p class="mt-3 font-sans text-sm leading-6 text-slate-400">
+            Introduce los datos de la persona y del chip vinculado al sistema.
+          </p>
+
+          <form id="planForm" class="mt-6 grid gap-5 sm:grid-cols-2">
+            <label class="font-sans text-sm text-slate-300 sm:col-span-2">
+              Nombre completo
+              <input name="fullName" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="text" autocomplete="name" required />
+            </label>
+            <label class="font-sans text-sm text-slate-300">
+              Correo electr&oacute;nico
+              <input name="email" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="email" autocomplete="email" required />
+            </label>
+            <label class="font-sans text-sm text-slate-300">
+              Tel&eacute;fono
+              <input name="phone" class="mt-2 w-full border border-neon/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-neon focus:shadow-neon" type="tel" autocomplete="tel" required />
+            </label>
+            <label class="font-sans text-sm text-slate-300">
+              Identificador del chip
+              <input name="chipId" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 uppercase text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="UTP-0000-0000" required />
+            </label>
+            <label class="font-sans text-sm text-slate-300">
+              Modelo del chip
+              <input name="chipModel" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="Enlace Neural V4" required />
+            </label>
+            <label class="font-sans text-sm text-slate-300 sm:col-span-2">
+              C&oacute;digo de vinculaci&oacute;n
+              <input name="linkCode" class="mt-2 w-full border border-cyanGlow/40 bg-black/50 px-4 py-3 uppercase text-slate-100 outline-none focus:border-cyanGlow focus:shadow-cyan" type="text" placeholder="XXXX-XXXX" required />
+            </label>
+            <button class="glitch-button border border-neon bg-neon px-6 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon sm:col-span-2" type="submit">
+              Confirmar acceso
+            </button>
+          </form>
+        </div>
+
+        <div id="planResultView" class="hidden py-8 text-center">
+          <div class="access-scanner mx-auto mb-7 grid h-28 w-28 place-items-center border border-cyanGlow/70">
+            <span class="h-14 w-14 border border-neon shadow-neon"></span>
+          </div>
+          <p class="font-sans text-xs font-bold uppercase tracking-[.28em] text-cyanGlow">Solicitud registrada</p>
+          <h2 id="planResultTitle" class="mt-3 text-3xl font-bold text-neon"></h2>
+          <p id="planResultMessage" class="mx-auto mt-4 max-w-lg font-sans text-base leading-7 text-slate-300"></p>
+          <a id="planResultAction" href="/inicio.html" class="glitch-button mt-7 inline-block border border-neon bg-neon px-7 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon">
+            Continuar
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <script src="/suscripcion.js"></script>
+  </body>
+</html>

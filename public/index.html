@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso bloqueado - Sistema Utopias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: '#00ff5f',
+              cyanGlow: '#31f7ff',
+              darkInk: '#02050a'
+            },
+            fontFamily: {
+              display: ['Orbitron', 'Rajdhani', 'Arial', 'sans-serif']
+            },
+            boxShadow: {
+              neon: '0 0 22px rgba(0,255,95,.55)',
+              cyan: '0 0 24px rgba(49,247,255,.28)'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="min-h-screen overflow-hidden bg-darkInk text-slate-100 font-display">
+    <main class="access-screen relative grid min-h-screen place-items-center px-4">
+      <div class="scanline pointer-events-none fixed inset-0 z-40 opacity-40"></div>
+      <div class="absolute inset-0 dream-grid"></div>
+      <div class="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/10 blur-3xl"></div>
+
+      <section class="relative z-10 w-full max-w-3xl text-center">
+        <p class="system-flicker mb-4 font-sans text-sm font-bold uppercase tracking-[.35em] text-red-400">Error de conexi&oacute;n</p>
+        <h1 class="glitch-title text-[clamp(3rem,10vw,7rem)] font-extrabold leading-none text-slate-100">
+          P&aacute;gina
+          <span class="block text-red-500">bloqueada</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl font-sans text-base leading-7 text-slate-400">
+          El sistema requiere verificar la identidad del usuario antes de permitir el acceso.
+        </p>
+        <button id="startAnalysis" class="glitch-button mt-8 border border-neon bg-neon px-7 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon" type="button">
+          Empezar an&aacute;lisis
+        </button>
+      </section>
+
+      <div id="accessModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 px-4 backdrop-blur-md">
+        <article class="panel access-dialog w-full max-w-xl p-6 text-center sm:p-9">
+          <div class="access-scanner mx-auto mb-7 grid h-28 w-28 place-items-center border border-cyanGlow/70">
+            <span class="h-14 w-14 border border-neon shadow-neon"></span>
+          </div>
+          <p class="mb-3 font-sans text-xs font-bold uppercase tracking-[.3em] text-cyanGlow">Protocolo de seguridad</p>
+          <h2 id="accessMessage" class="glitch-title text-2xl font-bold text-neon sm:text-4xl">Analizando computadora</h2>
+          <div class="mt-7 h-1 overflow-hidden bg-white/10">
+            <div id="accessProgress" class="access-progress h-full bg-neon shadow-neon"></div>
+          </div>
+          <a id="accessButton" href="/inicio.html" class="glitch-button mt-8 hidden border border-neon bg-neon px-7 py-3 text-xs font-bold uppercase tracking-wide text-black shadow-neon hover:bg-transparent hover:text-neon">
+            Acceder al sitio web
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <script src="/acceso.js"></script>
+  </body>
+</html>
